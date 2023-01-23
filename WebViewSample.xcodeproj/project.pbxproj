@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2EE29D297E842F00BC4B30 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EE29C297E842F00BC4B30 /* WebViewWrapper.swift */; };
 		BF9E04C5297D6C7000A25974 /* WebViewSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */; };
 		BF9E04C7297D6C7000A25974 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E04C6297D6C7000A25974 /* ContentView.swift */; };
 		BF9E04C9297D6C7100A25974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9E04C8297D6C7100A25974 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		8FA6E7103D2C509911B7AE21 /* Pods-WebViewSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewSample.release.xcconfig"; path = "Target Support Files/Pods-WebViewSample/Pods-WebViewSample.release.xcconfig"; sourceTree = "<group>"; };
+		BF2EE29C297E842F00BC4B30 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
 		BF9E04C1297D6C7000A25974 /* WebViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewSampleApp.swift; sourceTree = "<group>"; };
 		BF9E04C6297D6C7000A25974 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */,
 				BF9E04C6297D6C7000A25974 /* ContentView.swift */,
+				BF2EE29C297E842F00BC4B30 /* WebViewWrapper.swift */,
 				BF9E04C8297D6C7100A25974 /* Assets.xcassets */,
 				BF9E04CA297D6C7100A25974 /* Preview Content */,
 			);
@@ -189,6 +192,7 @@
 			files = (
 				BF9E04C7297D6C7000A25974 /* ContentView.swift in Sources */,
 				BF9E04C5297D6C7000A25974 /* WebViewSampleApp.swift in Sources */,
+				BF2EE29D297E842F00BC4B30 /* WebViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
