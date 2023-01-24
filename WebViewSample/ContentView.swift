@@ -26,7 +26,7 @@ struct ContentView: View {
                 .background(Color(uiColor: .secondarySystemBackground))
                 .textInputAutocapitalization(.never)
             EmptyView().padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
-            Button {
+            Button("Open Url") {
                 if !urlString.isEmpty {
                     if !urlString.contains("http") {
                         urlString = "https://" + urlString
@@ -35,17 +35,8 @@ struct ContentView: View {
                 } else {
                     hasError.toggle()
                 }
-            } label: {
-                Text("Open Url")
-                    .font(.system(size: 22, weight: .bold, design: .default))
-                    .padding(.horizontal, 100)
-                    .padding(.vertical, 30)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
             }
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(20)
+            .buttonStyle(ScaleButtonStyle())
             .fullScreenCover(isPresented: $isPresented) {
                 WebViewWrapper(webView: WebView(urlRequest: URLRequest(url: URL(string: urlString)!)))
             }
