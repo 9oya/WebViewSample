@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import UIKit
 
 struct WebViewWrapper: View {
     @Environment(\.dismiss) var dismiss
@@ -71,7 +72,16 @@ struct WebView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> WKWebView {
+        webView?.uiDelegate = context.coordinator
+        webView?.navigationDelegate = context.coordinator as WKNavigationDelegate
+        webView?.allowsBackForwardNavigationGestures = true
+        webView?.scrollView.isScrollEnabled = true
+        
         return webView!
+    }
+    
+    func makeCoordinator() -> WebViewCoordinator {
+        return WebViewCoordinator(self)
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
@@ -89,4 +99,34 @@ struct WebView: UIViewRepresentable {
     func refresh() {
         webView?.reload()
     }
+}
+
+// MARK: WKUIDelegate
+class WebViewCoordinator: NSObject, WKUIDelegate {
+    var parent: WebView
+    
+    init(_ parent: WebView) {
+        self.parent = parent
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert);
+        
+        let cancelAction = UIAlertAction(title: "확인", style: .cancel) {
+            _ in completionHandler()
+        }
+        
+        alertController.addAction(cancelAction)
+        DispatchQueue.main.async {
+            UIApplication
+                .shared
+                .topViewController()?
+                .present(alertController, animated: true)
+        }
+    }
+}
+
+// MARK: WKNavigationDelegate
+extension WebViewCoordinator: WKNavigationDelegate {
+    
 }

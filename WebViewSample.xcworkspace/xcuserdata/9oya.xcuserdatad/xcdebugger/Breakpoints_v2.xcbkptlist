@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FF2271EB-A7F1-445A-9831-14228AC5D953"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C763B642-F8E1-46A3-BF1D-AE2897032EBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WebViewSample/WebViewWrapper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "webView(_:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C763B642-F8E1-46A3-BF1D-AE2897032EBD - 5acea7748756a7be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WebViewSample.WebViewCoordinator.webView(_: __C.WKWebView, runJavaScriptAlertPanelWithMessage: Swift.String, initiatedByFrame: __C.WKFrameInfo, completionHandler: () -&gt; ()) -&gt; ()"
+                  moduleName = "WebViewSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/9oya/Worksapce/WebViewSample/WebViewSample/WebViewWrapper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "C763B642-F8E1-46A3-BF1D-AE2897032EBD - bae8fc0114534565"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in WebViewSample.WebViewCoordinator.webView(_: __C.WKWebView, runJavaScriptAlertPanelWithMessage: Swift.String, initiatedByFrame: __C.WKFrameInfo, completionHandler: () -&gt; ()) -&gt; ()"
+                  moduleName = "WebViewSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/9oya/Worksapce/WebViewSample/WebViewSample/WebViewWrapper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64B3DC80-3C5E-40C7-86B3-74957AAF78A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WebViewSample/WebViewWrapper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "makeCoordinator()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

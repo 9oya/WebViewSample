@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2D228F2983855C00BFF0CA /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D228E2983855C00BFF0CA /* UIApplication+Extension.swift */; };
 		BF2EE29D297E842F00BC4B30 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EE29C297E842F00BC4B30 /* WebViewWrapper.swift */; };
 		BF9E04C5297D6C7000A25974 /* WebViewSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */; };
 		BF9E04C7297D6C7000A25974 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E04C6297D6C7000A25974 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		8FA6E7103D2C509911B7AE21 /* Pods-WebViewSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewSample.release.xcconfig"; path = "Target Support Files/Pods-WebViewSample/Pods-WebViewSample.release.xcconfig"; sourceTree = "<group>"; };
+		BF2D228E2983855C00BFF0CA /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		BF2EE29C297E842F00BC4B30 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
 		BF9E04C1297D6C7000A25974 /* WebViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewSampleApp.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF2D228D2983854F00BFF0CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF2D228E2983855C00BFF0CA /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BF9E04B8297D6C6F00A25974 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		BF9E04C3297D6C7000A25974 /* WebViewSample */ = {
 			isa = PBXGroup;
 			children = (
+				BF2D228D2983854F00BFF0CA /* Extensions */,
 				BFDA2102297FC150003B6E96 /* ScaleButtonStyle.swift */,
 				BF9E04C4297D6C7000A25974 /* WebViewSampleApp.swift */,
 				BF9E04C6297D6C7000A25974 /* ContentView.swift */,
@@ -196,6 +207,7 @@
 				BF9E04C7297D6C7000A25974 /* ContentView.swift in Sources */,
 				BF9E04C5297D6C7000A25974 /* WebViewSampleApp.swift in Sources */,
 				BFDA2103297FC150003B6E96 /* ScaleButtonStyle.swift in Sources */,
+				BF2D228F2983855C00BFF0CA /* UIApplication+Extension.swift in Sources */,
 				BF2EE29D297E842F00BC4B30 /* WebViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
