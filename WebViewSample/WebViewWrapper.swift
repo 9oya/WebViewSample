@@ -124,6 +124,13 @@ class WebViewCoordinator: NSObject, WKUIDelegate {
                 .present(alertController, animated: true)
         }
     }
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
 }
 
 // MARK: WKNavigationDelegate
