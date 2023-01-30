@@ -67,8 +67,6 @@ struct WebView: UIViewRepresentable {
     private var webView: WKWebView?
     
     init(urlRequest: URLRequest) {
-        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
-        
         self.urlRequest = urlRequest
         self.webView = WKWebView()
     }
@@ -78,6 +76,7 @@ struct WebView: UIViewRepresentable {
         webView?.navigationDelegate = context.coordinator as WKNavigationDelegate
         webView?.allowsBackForwardNavigationGestures = true
         webView?.scrollView.isScrollEnabled = true
+        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
         
         return webView!
     }
