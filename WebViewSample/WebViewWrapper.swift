@@ -95,11 +95,31 @@ struct WebView: UIViewRepresentable {
     }
     
     func goForward(){
-        webView?.goForward()
+//        webView?.goForward()
+        evaluateJavaScript("localStorage['hb-test-token'] = '${token}'") {
+            self.evaluateJavaScript("localStorage['access_token'] = '${token}'") {
+                let jsCode = """
+                localStorage['order_prodOrderItemReqVO'] = [{"productPageCode":"PDTM00093","productCode":"DGE0000003","optionProductYn":"N","optionProductCode":"","dnaProductYn":"Y","count":1,"type":"P","from":"shop","goodsCode":""}]
+                """
+                self.evaluateJavaScript(jsCode) {
+                    self.webView?.load(urlRequest)
+                }
+            }
+        }
     }
     
     func refresh() {
         webView?.reload()
+    }
+    
+    private func evaluateJavaScript(_ jsCode: String, completed: @escaping ()->Void) {
+        webView?.evaluateJavaScript(jsCode, completionHandler: { result, err in
+            if let err = err {
+                print("evaluate JavaScript infoUpdate Error \(err.localizedDescription)")
+            } else {
+                completed()
+            }
+        })
     }
 }
 

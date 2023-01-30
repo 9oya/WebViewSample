@@ -11,7 +11,7 @@ import WebKit
 struct ContentView: View {
     @State private var isPresented = false
     @State private var hasError = false
-    @State private var urlString = "https://www.google.com"
+    @State private var urlString = "https://app.id-im.dev/diagnosis/consult/payment?category=D&addCode=HCC00008,HCC00009&prodCode=CRF0000003&presriptionCode=PR00000008"
     
     func CustomTextField(_ title: String, text: Binding<String>) -> some View {
         UITextField.appearance().clearButtonMode = .whileEditing
