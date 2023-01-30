@@ -9,6 +9,8 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
+    @ObservedObject var viewModel: ViewModel
+    
     @State private var isPresented = false
     @State private var hasError = false
     @State private var urlString = "https://app.id-im.dev/diagnosis/consult/payment?category=D&addCode=HCC00008,HCC00009&prodCode=CRF0000003&presriptionCode=PR00000008"
@@ -36,14 +38,20 @@ struct ContentView: View {
                     hasError.toggle()
                 }
             }
-            .buttonStyle(ScaleButtonStyle())
+            .buttonStyle(ScaleButtonStyle(bgColor: viewModel.token.isEmpty ? .gray : .blue))
             .fullScreenCover(isPresented: $isPresented) {
-                WebViewWrapper(webView: WebView(urlRequest: URLRequest(url: URL(string: urlString)!)))
+                WebViewWrapper(webView: WebView(urlRequest: URLRequest(url: URL(string: urlString)!),
+                                                token: viewModel.token))
             }
             .alert(isPresented: $hasError) {
                 Alert(title: Text("Empty text!"),
                       message: Text("Fill up the url filed"))
             }
+            .disabled(viewModel.token.isEmpty)
+            Button("Get Token") {
+                viewModel.fetchToken.send("")
+            }
+            
             Spacer()
         }
     }
@@ -51,6 +59,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ViewModel())
     }
 }

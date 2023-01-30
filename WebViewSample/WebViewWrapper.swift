@@ -65,9 +65,11 @@ struct WebViewWrapper: View {
 struct WebView: UIViewRepresentable {
     var urlRequest: URLRequest
     private var webView: WKWebView?
+    private var token: String
     
-    init(urlRequest: URLRequest) {
+    init(urlRequest: URLRequest, token: String) {
         self.urlRequest = urlRequest
+        self.token = token
         self.webView = WKWebView()
     }
     
@@ -95,8 +97,8 @@ struct WebView: UIViewRepresentable {
     
     func goForward(){
 //        webView?.goForward()
-        evaluateJavaScript("localStorage['hb-test-token'] = '${token}'") {
-            self.evaluateJavaScript("localStorage['access_token'] = '${token}'") {
+        evaluateJavaScript("localStorage['hb-test-token'] = '\(token)'") {
+            self.evaluateJavaScript("localStorage['access_token'] = '\(token)'") {
                 let jsCode = """
                 localStorage['order_prodOrderItemReqVO'] = [{"productPageCode":"PDTM00093","productCode":"DGE0000003","optionProductYn":"N","optionProductCode":"","dnaProductYn":"Y","count":1,"type":"P","from":"shop","goodsCode":""}]
                 """

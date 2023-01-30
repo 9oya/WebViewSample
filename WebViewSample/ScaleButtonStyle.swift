@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ScaleButtonStyle: ButtonStyle {
-    init() {}
+    var bgColor: Color = .gray
+    
+    init(bgColor: Color) {
+        self.bgColor = bgColor
+    }
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -17,7 +21,7 @@ struct ScaleButtonStyle: ButtonStyle {
             .padding(.vertical, 30)
             .brightness(configuration.isPressed ? -0.05 : 0)
             .foregroundColor(.white)
-            .background(Capsule().fill(.blue))
+            .background(Capsule().fill(bgColor))
             .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .animation(.linear(duration: 0.2), value: configuration.isPressed)
             
@@ -26,6 +30,6 @@ struct ScaleButtonStyle: ButtonStyle {
 
 extension ButtonStyle where Self == ScaleButtonStyle {
     static var scale: ScaleButtonStyle {
-        ScaleButtonStyle()
+        ScaleButtonStyle(bgColor: .gray)
     }
 }
