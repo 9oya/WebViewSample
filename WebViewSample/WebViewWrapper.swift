@@ -136,12 +136,19 @@ class WebViewCoordinator: NSObject, WKUIDelegate {
 // MARK: WKNavigationDelegate
 extension WebViewCoordinator: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.targetFrame == nil,
-            let url = navigationAction.request.url {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        guard let response = navigationResponse.response as? HTTPURLResponse,
+              let url = navigationResponse.response.url else {
+            decisionHandler(.cancel)
+            return
+        }
+        
+        if let headerFields = response.allHeaderFields as? [String: String] {
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+            cookies.forEach { cookie in
+                webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
             }
         }
+        
         decisionHandler(.allow)
     }
 }
